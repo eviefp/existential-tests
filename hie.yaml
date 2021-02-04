@@ -1,0 +1,13 @@
+cradle:
+  cabal:
+    - path: "src"
+      component: "lib:existential"
+
+    - path: "app/Main.hs"
+      component: "existential:exe:existential"
+
+    - path: "app/Paths_existential.hs"
+      component: "existential:exe:existential"
+
+    - path: "test"
+      component: "existential:test:existential-test"

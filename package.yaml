@@ -1,0 +1,62 @@
+name:                existential
+version:             0.1.0.0
+github:              "vladciobanu/existential"
+license:             Unlicense
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2020 Author name here"
+
+extra-source-files:
+- README.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/vladciobanu/existential#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+ghc-options:
+  - -Weverything
+  - -Wno-missing-home-modules # Behavior doesn't make sense
+  - -Wno-redundant-constraints # doesn't play nice with DB or other constraint synonyms
+  - -Wno-missed-specialisations # brings up a lot more than you'd expect. not sure how actionable they are.
+  - -Wno-all-missed-specialisations # see -Wno-missed-specialisations
+  - -Wno-missing-exported-signatures # missing-exported-signatures turns off the more strict -Wmissing-signatures. See https://ghc.haskell.org/trac/ghc/ticket/14794#ticket
+  - -Wno-missing-import-lists # Requires explicit imports of _every_ function (e.g. '$'); too strict
+  - -Wno-unsafe # Don't use Safe Haskell warnings
+  - -Wno-safe # Don't use Safe Haskell warnings
+  - -Wno-monomorphism-restriction # Don't warn if the monomorphism restriction is used
+  - -Wno-missing-safe-haskell-mode
+  - -Wno-prepositive-qualified-module # stylish currently doesn't work with this
+
+library:
+  source-dirs: src
+
+executables:
+  existential:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - existential
+
+tests:
+  existential-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - existential
+

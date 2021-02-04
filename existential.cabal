@@ -1,0 +1,59 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.34.3.
+--
+-- see: https://github.com/sol/hpack
+
+name:           existential
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/vladciobanu/existential#readme>
+homepage:       https://github.com/vladciobanu/existential#readme
+bug-reports:    https://github.com/vladciobanu/existential/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        Unlicense
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/vladciobanu/existential
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_existential
+  hs-source-dirs:
+      src
+  ghc-options: -Weverything -Wno-missing-home-modules -Wno-redundant-constraints -Wno-missed-specialisations -Wno-all-missed-specialisations -Wno-missing-exported-signatures -Wno-missing-import-lists -Wno-unsafe -Wno-safe -Wno-monomorphism-restriction -Wno-missing-safe-haskell-mode -Wno-prepositive-qualified-module
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable existential
+  main-is: Main.hs
+  other-modules:
+      Paths_existential
+  hs-source-dirs:
+      app
+  ghc-options: -Weverything -Wno-missing-home-modules -Wno-redundant-constraints -Wno-missed-specialisations -Wno-all-missed-specialisations -Wno-missing-exported-signatures -Wno-missing-import-lists -Wno-unsafe -Wno-safe -Wno-monomorphism-restriction -Wno-missing-safe-haskell-mode -Wno-prepositive-qualified-module -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , existential
+  default-language: Haskell2010
+
+test-suite existential-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_existential
+  hs-source-dirs:
+      test
+  ghc-options: -Weverything -Wno-missing-home-modules -Wno-redundant-constraints -Wno-missed-specialisations -Wno-all-missed-specialisations -Wno-missing-exported-signatures -Wno-missing-import-lists -Wno-unsafe -Wno-safe -Wno-monomorphism-restriction -Wno-missing-safe-haskell-mode -Wno-prepositive-qualified-module -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , existential
+  default-language: Haskell2010
